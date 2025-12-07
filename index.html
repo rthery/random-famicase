@@ -8,65 +8,164 @@
   </head>
   <body>
 		<h1 id="title" onclick="randomize();">⇒ RAND<span id="arr">↻</span>M FAMICASE ⇐</h1>
+		
+		<div id="controls-row">
+			<div id="year-selector">
+				<select id="year">
+					<option value="-1">ANY YEAR</option>
+        <option value="-2">ANY BIG</option>
+        <option value="20" selected> 2025</option>
+        <option value="19"> 2024</option>
+        <option value="18"> 2023</option>
+        <option value="17"> 2022</option>
+        <option value="16"> 2021</option>
+        <option value="15"> 2020</option>
+        <option value="14"> 2019</option>
+				<option value="13"> 2018</option>
+				<option value="12"> 2017</option>
+				<option value="11"> 2016</option>
+        <option value="10"> 2015</option>
+        <option value="9"> 2014</option>
+        <option value="8"> 2013</option>
+        <option value="7"> 2012</option>
+        <option value="6"> 2011</option>
+        <option value="5"> 2010</option>
+        <option value="4"> 2009</option>
+        <option value="3"> 2008</option>
+        <option value="2"> 2007</option>
+        <option value="1"> 2006</option>
+        <option value="0"> 2005</option>
+				</select>
+				<div class="dropdown-icon">
+					<svg class="chevron-down" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+						<path d="m6 9 6 6 6-6"/>
+					</svg>
+				</div>
+			</div>
+			
+			<div id="team-selector">
+				<input type="text" id="team-name" placeholder="Enter seed..." />
+				<button id="dice-button" onclick="randomizeWithSeed();" title="Generate covers for this seed">
+					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-dices-icon lucide-dices"><rect width="12" height="12" x="2" y="10" rx="2" ry="2"/><path d="m17.92 14 3.5-3.5a2.24 2.24 0 0 0 0-3l-5-4.92a2.24 2.24 0 0 0-3 0L10 6"/><path d="M6 18h.01"/><path d="M10 14h.01"/><path d="M15 6h.01"/><path d="M18 9h.01"/></svg>
+				</button>
+			</div>
+		</div>
 
 		<div id="container">
 
-			<div id="left-panel" class="panel">
-
-				<a target="_blank" class="link" id="source_link">SOURCE</a> <br/>
-				<a target="_blank" class="link" id="translation_link">TRANSLATION</a> <br/>
-				<select id="year">
-					<option value="-1" selected>ANY YEAR</option>
-          <option value="-2">ANY BIG</option>
-          <option value="20"> 2025</option>
-          <option value="19"> 2024</option>
-          <option value="18"> 2023</option>
-          <option value="17"> 2022</option>
-          <option value="16"> 2021</option>
-          <option value="15"> 2020</option>
-          <option value="14"> 2019</option>
-					<option value="13"> 2018</option>
-					<option value="12"> 2017</option>
-					<option value="11"> 2016</option>
-          <option value="10"> 2015</option>
-          <option value="9"> 2014</option>
-          <option value="8"> 2013</option>
-          <option value="7"> 2012</option>
-          <option value="6"> 2011</option>
-          <option value="5"> 2010</option>
-          <option value="4"> 2009</option>
-          <option value="3"> 2008</option>
-          <option value="2"> 2007</option>
-          <option value="1"> 2006</option>
-          <option value="0"> 2005</option>
-				</select>
-				<br/>
-			</div>
-
-
 			<div id="center-panel" class="panel">
 
-					<img id="fam"/>
-					<img id="load" src="img/loader.gif" style="display:none;"/>
+				<div id="grid-container">
+					<div class="grid-item">
+						<img id="fam1" class="fam-img"/>
+						<div id="load1" class="loader" style="display:none;"></div>
+						<div class="cover-links hidden">
+						<span class="cover-id" id="cover_id1">#000</span>
+						<a id="source_link1" target="_blank" class="cover-link" title="View original Famicase page">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M15 3h6v6"></path>
+								<path d="M10 14L21 3"></path>
+								<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+							</svg>
+						</a>
+						<a id="translation_link1" target="_blank" class="cover-link" title="Translate original Famicase page to French">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="m5 8 6 6"></path>
+								<path d="m4 14 6-6 2-3"></path>
+								<path d="M2 5h12"></path>
+								<path d="M7 2h1"></path>
+								<path d="m22 22-5-10-5 10"></path>
+								<path d="M14 18h6"></path>
+							</svg>
+						</a>
+					</div>
+					</div>
+					<div class="grid-item">
+						<img id="fam2" class="fam-img"/>
+						<div id="load2" class="loader" style="display:none;"></div>
+						<div class="cover-links hidden">
+						<span class="cover-id" id="cover_id2">#000</span>
+						<a id="source_link2" target="_blank" class="cover-link" title="View original Famicase page">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M15 3h6v6"></path>
+								<path d="M10 14L21 3"></path>
+								<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+							</svg>
+						</a>
+						<a id="translation_link2" target="_blank" class="cover-link" title="Translate original Famicase page to French">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="m5 8 6 6"></path>
+								<path d="m4 14 6-6 2-3"></path>
+								<path d="M2 5h12"></path>
+								<path d="M7 2h1"></path>
+								<path d="m22 22-5-10-5 10"></path>
+								<path d="M14 18h6"></path>
+							</svg>
+						</a>
+					</div>
+					</div>
+					<div class="grid-item">
+						<img id="fam3" class="fam-img"/>
+						<div id="load3" class="loader" style="display:none;"></div>
+						<div class="cover-links hidden">
+						<span class="cover-id" id="cover_id3">#000</span>
+						<a id="source_link3" target="_blank" class="cover-link" title="View original Famicase page">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M15 3h6v6"></path>
+								<path d="M10 14L21 3"></path>
+								<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+							</svg>
+						</a>
+						<a id="translation_link3" target="_blank" class="cover-link" title="Translate original Famicase page to French">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="m5 8 6 6"></path>
+								<path d="m4 14 6-6 2-3"></path>
+								<path d="M2 5h12"></path>
+								<path d="M7 2h1"></path>
+								<path d="m22 22-5-10-5 10"></path>
+								<path d="M14 18h6"></path>
+							</svg>
+						</a>
+					</div>
+					</div>
+					<div class="grid-item">
+						<img id="fam4" class="fam-img"/>
+						<div id="load4" class="loader" style="display:none;"></div>
+						<div class="cover-links hidden">
+						<span class="cover-id" id="cover_id4">#000</span>
+						<a id="source_link4" target="_blank" class="cover-link" title="View original Famicase page">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="M15 3h6v6"></path>
+								<path d="M10 14L21 3"></path>
+								<path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+							</svg>
+						</a>
+						<a id="translation_link4" target="_blank" class="cover-link" title="Translate original Famicase page to French">
+							<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+								<path d="m5 8 6 6"></path>
+								<path d="m4 14 6-6 2-3"></path>
+								<path d="M2 5h12"></path>
+								<path d="M7 2h1"></path>
+								<path d="m22 22-5-10-5 10"></path>
+								<path d="M14 18h6"></path>
+							</svg>
+						</a>
+					</div>
+					</div>
+				</div>
 
 			</div>
 
-
 			<div id="right-panel" class="panel">
-
-				<a onclick="save();" >SAVE</a>
-				<ul id="list">
-				</ul>
 
 			</div>
 
 		</div>
 
 		<footer>
-			by <a target="_blank" class="link" href="https://twitter.com/Pyrofoux">@Pyrofoux</a> for <a target="_blank" class="link" href="https://twitter.com/AGBICjam">A Game By Its Cover</a>
+			A fork of the original <a target="_blank" class="link" href="https://pyrofoux.itch.io/random-famicase">RAND↻M FAMICASE</a> by <a target="_blank" class="link" href="https://twitter.com/Pyrofoux">@Pyrofoux</a> for <a target="_blank" class="link" href="https://twitter.com/AGBICjam">A Game By Its Cover</a>
 		</footer>
 
-		<script type="text/javascript" src="js/lockr.js" ></script>
 		<script type="text/javascript" src="js/script.js"></script>
   </body>
 </html>

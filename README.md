@@ -1,19 +1,19 @@
-# [RAND↻M FAMICASE](https://pyrofoux.itch.io/random-famicase)
+# [RAND↻M FAMICASE](https://pyrofoux.itch.io/random-famicase) - Fork
 
-A tool to browse the many artworks done for the annual [Famicase](http://famicase.com/) exhibition.
+A fork of the original tool to browse Famicase exhibition artworks.
 
-Click on the title to get a new cover.
+## 🎲 Team-Based Randomization
 
-Features :
-- Choosing random game cover art
-- Choosing a specific year
-- Translating the author description to English
-- Adding your favorite covers to a list - it won't be erased when you close the window
-- A cool name !
+Enter any seed (like your team name) to generate 4 consistent random Famicase covers. Perfect for game jams where teams need inspiration!
 
-Updated up to the 2025 exhibition.
+**Same seed = same 4 covers every time**
 
-Potential future features:
-- Not hotlinking images from the Famicase Exhibition website
+## 🌐 Original Project
 
-Feel free to add your own features!
+Fork of the original [RAND↻M FAMICASE](https://pyrofoux.itch.io/random-famicase) by [@Pyrofoux](https://twitter.com/Pyrofoux) for [A Game By Its Cover](https://twitter.com/AGBICjam).
+
+## 🚀 GitHub Pages Deployment
+
+This project is set up for automatic GitHub Pages deployment
+
+The site works perfectly when opened directly in a browser - no web server required!
